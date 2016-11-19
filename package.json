@@ -1,0 +1,26 @@
+{
+  "name": "fullstack",
+  "version": "1.0.0",
+  "description": "Fullstack test para almundo",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Juan Pablo Fuertes",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "grunt": "^1.0.1",
+    "grunt-cli": "^1.2.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-ts": "^6.0.0-beta.3",
+    "grunt-tslint": "^3.3.0",
+    "tslint": "^4.0.0",
+    "typescript": "^2.0.10",
+    "typings": "^2.0.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.0.34"
+  }
+}
