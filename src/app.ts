@@ -1,3 +1,4 @@
+/// <reference path="_all.d.ts" />
 "use strict";
 import * as bodyParser from "body-parser";
 import * as express from "express";
@@ -32,13 +33,8 @@ class Server {
    * @constructor
    */
   constructor() {
-    //create expressjs application
     this.app = express();
-
-    //configure application
     this.config();
-
-    //configure routes
     this.routes();
   }
 
@@ -52,18 +48,9 @@ class Server {
   private config() {
     this.app.set("view engine", "jade");
 
-    //mount logger
-    //this.app.use(logger("dev"));
-
-    //mount json form parser
+    // this.app.use(logger("dev"));
     this.app.use(bodyParser.json());
-
-    //mount query string parser
     this.app.use(bodyParser.urlencoded({ extended: true }));
-
-    //add static paths
-    this.app.use(express.static(path.join(__dirname, "public")));
-    this.app.use(express.static(path.join(__dirname, "bower_components")));
 
     // catch 404 and forward to error handler
     this.app.use(function(err: any, req: express.Request, res: express.Response, next: express.NextFunction) {
@@ -84,13 +71,9 @@ class Server {
     let router: express.Router;
     router = express.Router();
 
-    //create routes
     var hotels: hotelsMod.Hotels = new hotelsMod.Hotels();
-
-    router.get("/hotesl/:id", hotels.findById);
-    router.get("/hotesl/:start?/:show?", hotels.findAll);
-
-    //use router middleware
+    router.get("/hotels/:id", hotels.findById);
+    router.get("/hotels/:start?/:show?", hotels.findAll);
     this.app.use(router);
   }
 }

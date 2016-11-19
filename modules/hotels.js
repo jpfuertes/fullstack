@@ -4,12 +4,12 @@ var HotelsModule;
     class Hotels {
         findById(req, res, next) {
             var id = req.params.id;
-            res.send("");
+            res.send("hola mundo");
         }
         findAll(req, res, next) {
             var show = req.params.show;
             var start = req.params.start;
-            res.send("");
+            res.send("hola mundo 2");
         }
     }
     HotelsModule.Hotels = Hotels;
