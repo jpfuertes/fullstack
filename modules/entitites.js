@@ -1,5 +1,5 @@
 "use strict";
-const mdb = require("mongooes");
+const mdb = require("mongoose");
 ;
 var hotelSchema = new mdb.Schema({
     name: String,

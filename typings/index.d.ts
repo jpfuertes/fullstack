@@ -4,3 +4,4 @@
 /// <reference path="globals/serve-static/index.d.ts" />
 /// <reference path="modules/body-parser/index.d.ts" />
 /// <reference path="modules/debug/index.d.ts" />
+/// <reference path="modules/mongoose/index.d.ts" />

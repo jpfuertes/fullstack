@@ -1,4 +1,4 @@
-import * as mdb from "mongooes"
+import * as mdb from "mongoose"
 
 interface IHotel{
     name:string;
