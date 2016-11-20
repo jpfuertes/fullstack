@@ -5,7 +5,7 @@ module.exports = function(grunt) {
     ts: {
       app: {
         files: [{
-          src: ["src/**/*.ts", "data/*.ts", "!src/.baseDir.ts", "!src/_all.d.ts"],
+          src: ["src/**/*.ts", "data/**/*.ts","!src/.baseDir.ts", "!src/_all.d.ts"],
           dest: "."
         }],
         options: {
@@ -35,9 +35,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks("grunt-contrib-watch");
   grunt.loadNpmTasks("grunt-ts");
   grunt.loadNpmTasks("grunt-tslint");
+
   grunt.registerTask("default", [
     "ts"
-    // "tslint"
+    //,"tslint"
   ]);
 
 };

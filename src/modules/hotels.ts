@@ -1,22 +1,25 @@
 "use strict";
 
 import * as express from "express";
+import Hotel = require("./entities");
 
-module HotelsModule {
-
-  export class Hotels {
+export class Hotels {
 
   public findById(req: express.Request, res: express.Response, next: express.NextFunction) {
-    var id = req.params.id;
-    res.send("hola mundo");
+    let id = req.params.id;
+    res.send("findById");
   }
 
   public findAll(req: express.Request, res: express.Response, next: express.NextFunction) {
-    var show = req.params.show;
-    var start = req.params.start;
-    res.send("hola mundo 2");
-   }
+    let start = req.params.start;
+    let show = req.params.show;
+    Hotel.Hotel.find({ published: true })
+      .lean()
+      .limit(20)
+      .exec(function (err, hotels) {
+        res.send(JSON.stringify(hotels));
+      });
   }
 }
 
-export = HotelsModule;
+module.exports = Hotels;
