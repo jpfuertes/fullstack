@@ -2,7 +2,7 @@
   "name": "fullstack",
   "version": "1.0.0",
   "description": "Fullstack test para almundo",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "test",
     "grunt": "grunt",
