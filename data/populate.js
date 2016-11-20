@@ -12,7 +12,7 @@ for (let hotel of hotelData.hotels) {
     let hotelEntry = new hotelEntity.HotelModel({
         name: hotel.name,
         price: hotel.price,
-        start: hotel.start,
+        stars: hotel.stars,
     });
     hotelEntry.save(function (err) {
         if (err) {

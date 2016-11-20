@@ -27,9 +27,8 @@ export class Hotels {
 
     }
 
-    hotelEntity.HotelModel.find({limit:10, skip:start},'name price stars')
+    hotelEntity.HotelModel.find({},'name price stars')
       .lean()
-      .limit(20)
       .exec(function (err, hotels) {
         res.send(JSON.stringify(hotels));
       });

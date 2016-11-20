@@ -9,10 +9,10 @@ module.exports = function(grunt) {
               "src/**/*.ts",
               "data/**/*.ts",
               "!src/.baseDir.ts",
-              "!node_modules/**/*.ts",
-              "!src/_all.d.ts"
+              "!src/_all.d.ts",
+              "!node_modules/**/*.ts"
               ],
-          dest: "./"
+          dest: "."
         }],
         options: {
           fast: 'never',
