@@ -5,14 +5,22 @@ module.exports = function(grunt) {
     ts: {
       app: {
         files: [{
-          src: ["src/**/*.ts", "data/**/*.ts","!src/.baseDir.ts", "!src/_all.d.ts"],
-          dest: "."
+          src: [
+              "src/**/*.ts",
+              "data/**/*.ts",
+              "!src/.baseDir.ts",
+              "!node_modules/**/*.ts",
+              "!src/_all.d.ts"
+              ],
+          dest: "./"
         }],
         options: {
+          fast: 'never',
           module: "commonjs",
           noLib: true,
           target: "es6",
-          sourceMap: false
+          sourceMap: false,
+          
         }
       }
     },
@@ -23,16 +31,17 @@ module.exports = function(grunt) {
       files: {
         src: ["src/**/*.ts"]
       }
-    },
+    }
+    ,
     watch: {
       ts: {
-        files: ["js/src/**/*.ts", "src/**/*.ts"],
+        files: ["src/**/*.ts"],
         tasks: ["ts", "tslint"]
       }
     }
   });
 
-  grunt.loadNpmTasks("grunt-contrib-watch");
+  // grunt.loadNpmTasks("grunt-contrib-watch");
   grunt.loadNpmTasks("grunt-ts");
   grunt.loadNpmTasks("grunt-tslint");
 

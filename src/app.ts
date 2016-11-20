@@ -3,7 +3,7 @@
 import * as bodyParser from "body-parser";
 import * as express from "express";
 import * as path from "path";
-import * as hotelsMod from "./modules/hotels";
+import * as hotels from "./modules/hotels";
 
 /**
  * The server.
@@ -39,9 +39,9 @@ class Server {
     let router: express.Router;
     router = express.Router();
 
-    const hotels: hotelsMod.Hotels = new hotelsMod.Hotels();
-    router.get("/hotels/:id", hotels.findById);
-    router.get("/hotels/:start?/:show?", hotels.findAll);
+    const hotelInstance: hotels.Hotels = new hotels.Hotels();
+    router.get("/hotels/:id", hotelInstance.findById);
+    router.get("/hotels/:start?/:show?", hotelInstance.findAll);
     this.app.use(router);
   }
 }

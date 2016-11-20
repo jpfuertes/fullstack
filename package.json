@@ -6,7 +6,7 @@
   "scripts": {
     "test": "test",
     "grunt": "grunt",
-    "start": "node ./bin/www",
+    "start": "node ./bin/launcher",
     "populate": "node ./data/populate.js"
   },
   "author": "Juan Pablo Fuertes",
