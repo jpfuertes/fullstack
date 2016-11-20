@@ -12,7 +12,7 @@ module.exports = function(grunt) {
               "!src/_all.d.ts",
               "!node_modules/**/*.ts"
               ],
-          dest: "."
+          dest: "dist"
         }],
         options: {
           fast: 'never',
